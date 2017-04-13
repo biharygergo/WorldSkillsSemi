@@ -213,6 +213,8 @@ $(function () {
     finishedDialog = $("#dialog-finished").dialog({
       autoOpen: false,
       modal: true,
+      width: 600,
+
       show: {
         effect: "fade",
         duration: 1000
