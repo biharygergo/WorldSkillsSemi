@@ -13,7 +13,7 @@ function PuzzleGame(diff) {
       pieces = game.cutImageUp(image);
       game.insertDivs(pieces);
     };
-    image.src = '../images/tulip.jpg';
+    image.src = 'images/tulip.jpg';
 
   };
 
