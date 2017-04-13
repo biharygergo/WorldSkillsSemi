@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Best Puzzle Game Ever</title>
+  <link href="../jquery-ui.css" rel="stylesheet">
+  <link href="../style/adduser.css" rel="stylesheet">
+  <link rel="icon" href="../images/puzzleicon.png">
+</head>
+<body>
+
+<div id="dialog-form" title="Welcome to Custom Puzzle!">
+  <form>
+    <fieldset>
+      <label for="userName">Name</label><br/>
+      <input type="text" name="name" id="userName" class="text ui-widget-content ui-corner-all">
+      <label id="errorLabel" class="hidden ui-state-error-text"></label><br/>
+      <label for="difficultySelector">Difficulty</label><br/>
+      <select id="difficultySelector" class="ui-widget-content">
+        <option selected="selected" value="2">Easy</option>
+        <option value="3">Intermediate</option>
+        <option value="4">Difficult</option>
+
+      </select>
+
+
+      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px ">
+    </fieldset>
+  </form>
+</div>
+
+<div id="dialog-finished" title="Congratulations! You have solved the puzzle.">
+  <p>
+    You did it!
+  </p>
+
+</div>
+
+
+<div id="gamediv" class="gameDiv">
+  <h1 id="playerName" class="gameheader"></h1>
+  <h1 id="timer" class="gameheader timer">0:00</h1>
+  <div id="leftDiv" class="leftDiv">
+
+  </div>
+
+
+  <div id="rightDiv" class="rightDiv">
+
+  </div>
+
+</div>
+
+
+<button id="pauseButton" class="buttonStyle">Pause</button>
+<button id="restartButton" class="buttonStyle">Restart</button>
+
+<script src="../external/jquery/jquery.js"></script>
+<script src="../jquery-ui.js"></script>
+<script src="../js/demo.js"></script>
+<script src="../js/adduser.js"></script>
+
+</body>
+</html>
