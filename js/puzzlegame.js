@@ -193,6 +193,8 @@ function PuzzleGame() {
   game.prepareGame = function () {
     var image = new Image();
     var pieces = [];
+    image.setAttribute('crossOrigin', 'anonymous');
+
     image.onload = function () {
       pieces = game.cutImageUp(image);
       game.insertDivs(pieces);
