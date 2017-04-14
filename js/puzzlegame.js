@@ -5,9 +5,7 @@ function PuzzleGame() {
   var game = [];
   var difficulty = 2;
 
-  game.dropped = "";
-  game.droppedCount = 0;
-  game.imageDimensions = Math.floor(498.0 / difficulty);
+
 
   game.imageSource = 'images/tulip.jpg';
   var startDialog, finishedDialog, form,
@@ -40,6 +38,9 @@ function PuzzleGame() {
       errorLabel.empty();
       $("#playerName").append(name.val());
       difficulty = selectedDifficulty;
+      game.dropped = "";
+      game.droppedCount = 0;
+      game.imageDimensions = Math.floor(498.0 / difficulty);
       game.prepareGame();
       startDialog.dialog("close");
       startStopWatch();
@@ -175,6 +176,7 @@ function PuzzleGame() {
   };
 
   game.checkWin = function () {
+    debugger;
     if (game.droppedCount == difficulty * difficulty) {
       finishedDialog.dialog("open");
     }
