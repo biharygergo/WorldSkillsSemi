@@ -176,7 +176,6 @@ function PuzzleGame() {
   };
 
   game.checkWin = function () {
-    debugger;
     if (game.droppedCount == difficulty * difficulty) {
       finishedDialog.dialog("open");
     }
