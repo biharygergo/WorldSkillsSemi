@@ -6,7 +6,6 @@ function PuzzleGame() {
   var difficulty = 2;
 
 
-
   game.imageSource = 'images/tulip.jpg';
   var startDialog, finishedDialog, form,
 
@@ -42,7 +41,7 @@ function PuzzleGame() {
       game.droppedCount = 0;
       game.imageDimensions = Math.floor(498.0 / difficulty);
       game.prepareGame();
-      startDialog.dialog("close");
+      closeStartDialog();
       startStopWatch();
 
     }
@@ -100,7 +99,7 @@ function PuzzleGame() {
     },
     buttons: {
       "Restart application": function () {
-        $(this).dialog("close");
+        closeFinishedDialog();
         restartApplication();
 
       }
@@ -120,8 +119,28 @@ function PuzzleGame() {
     elapsedSeconds = 0;
     timer.empty();
     timer.append("00:00");
-    startDialog.dialog("open");
+    openStartDialog();
   };
+
+  function openStartDialog() {
+    startDialog.dialog("open");
+    $('body').append('<div class="modal-backdrop fade in"></div>');
+  }
+
+  function closeStartDialog() {
+    startDialog.dialog("close");
+    $(".modal-backdrop").remove();
+  }
+
+  function openFinishedDialog() {
+    finishedDialog.dialog("open");
+    $('body').append('<div class="modal-backdrop fade in"></div>');
+  }
+
+  function closeFinishedDialog() {
+    finishedDialog.dialog("close");
+    $(".modal-backdrop").remove();
+  }
 
   form = startDialog.find("form").on("submit", function (event) {
     event.preventDefault();
@@ -154,14 +173,13 @@ function PuzzleGame() {
   });
 
   game.startGame = function () {
-    startDialog.dialog("open");
+    openStartDialog();
     difficultySelector.selectmenu({
       change: function (event, data) {
         selectedDifficulty = data.item.value;
       }
     });
   };
-
 
 
   game.prepareGame = function () {
@@ -177,7 +195,7 @@ function PuzzleGame() {
 
   game.checkWin = function () {
     if (game.droppedCount == difficulty * difficulty) {
-      finishedDialog.dialog("open");
+      openFinishedDialog();
     }
   };
 
