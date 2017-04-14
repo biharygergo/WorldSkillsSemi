@@ -10,6 +10,7 @@ https://biharygergo.github.io/WorldSkillsSemi/
 Download this project as .zip file open it in an IDE and launch index.html in Chrome.
 Ensure that the screen is wide enough for two images to appear side by side. 
 The zip is available in the top-right corner, or by clicking the link below: 
+
 https://github.com/biharygergo/WorldSkillsSemi/archive/master.zip
 
 
