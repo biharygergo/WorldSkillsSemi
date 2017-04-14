@@ -184,7 +184,6 @@ function PuzzleGame() {
     openStartDialog();
     difficultySelector.selectmenu({
       change: function (event, data) {
-        console.log(data.item.value);
         selectedDifficulty = data.item.value;
       }
     });
